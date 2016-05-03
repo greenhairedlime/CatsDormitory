@@ -4,11 +4,29 @@
   <title>Cats Dormitory</title>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'share', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
 </head>
-<body style=" background: url(<%= asset_path 'cat.jpg' %>);">
+<body>
 
 <%= yield %>
-
+<footer>
+  <div id="share">
+    <p>Share links: </p>
+    <a onclick="Share.vkontakte('URL','TITLE','IMG_PATH','DESC')">
+      <%= image_tag("vk_icon.png", :width => 32, :height => 32, :crop => :fill)%>
+    </a>
+    <a onclick="Share.odnoklassniki('URL','DESC')">
+      <%= image_tag("ok_icon.png", :width => 32, :height => 32, :crop => :fill) %>
+    </a>
+    <a onclick="Share.facebook('URL','TITLE','IMG_PATH','DESC')">
+      <%= image_tag("facebook_icon.png", :width => 32, :height => 32, :crop => :fill) %>
+    </a>
+    <a onclick="Share.twitter('URL','TITLE')">
+      <%= image_tag("twitter_icon.jpg", :width => 32, :height => 32, :crop => :fill) %>
+    </a>
+  </div>
+  <p id="copyright">&copy;Cat Paw's Development</p>
+</footer>
 </body>
 </html>
