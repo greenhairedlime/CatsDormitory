@@ -7,26 +7,49 @@
   <%= javascript_include_tag 'share', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
 </head>
-<body>
-
-<%= yield %>
-<footer>
-  <div id="share">
-    <p>Share links: </p>
-    <a onclick="Share.vkontakte('URL','TITLE','IMG_PATH','DESC')">
-      <%= image_tag("vk_icon.png", :width => 32, :height => 32, :crop => :fill)%>
-    </a>
-    <a onclick="Share.odnoklassniki('URL','DESC')">
-      <%= image_tag("ok_icon.png", :width => 32, :height => 32, :crop => :fill) %>
-    </a>
-    <a onclick="Share.facebook('URL','TITLE','IMG_PATH','DESC')">
-      <%= image_tag("facebook_icon.png", :width => 32, :height => 32, :crop => :fill) %>
-    </a>
-    <a onclick="Share.twitter('URL','TITLE')">
-      <%= image_tag("twitter_icon.jpg", :width => 32, :height => 32, :crop => :fill) %>
-    </a>
+<nav class="navbar navbar-default navbar-static-top">
+  <div class="container">
+    <a class="navbar-brand" href="/welcome/index"><%= image_tag("logo1.jpg", :width => 32, :height => 32, :crop => :fill) %></a>
+    <a class="navbar-brand" href="/welcome/index">Cats Dormitory</a>
+    <ul class="nav nav-pills navbar-right">
+      <li><%= link_to 'Home', controller: 'welcome'%></li>
+      <li><%= link_to 'Reserve', controller: 'users'%></li>
+      <li><%= link_to 'Blog', controller: 'articles'%></li>
+    </ul>
   </div>
-  <p id="copyright">&copy;Cat Paw's Development</p>
-</footer>
+</nav>
+<body>
+  <div class="container">
+    <div class="jumbotron"><%= yield %></div>
+  </div>
 </body>
+<nav class="navbar navbar-default navbar-static-bottom">
+  <div class="container">
+    <div class="navbar-left">
+      <h3>Site Map</h3>
+      <ul>
+        <li><%= link_to 'Home', controller: 'welcome'%></li>
+        <li><%= link_to 'Blog', controller: 'articles'%></li>
+      </ul>
+      <p>&copy;Cat Paw's Development</p>
+    </div>
+
+    <div class="navbar-right">
+      <p>Share links: </p>
+      <a onclick="Share.vkontakte('URL','TITLE','IMG_PATH','DESC')" class="navbar-link">
+        <%= image_tag("vk_icon.png", :width => 32, :height => 32, :crop => :fill)%>
+      </a>
+      <a onclick="Share.odnoklassniki('URL','DESC')">
+        <%= image_tag("ok_icon.png", :width => 32, :height => 32, :crop => :fill) %>
+      </a>
+      <a onclick="Share.facebook('URL','TITLE','IMG_PATH','DESC')">
+        <%= image_tag("facebook_icon.png", :width => 32, :height => 32, :crop => :fill) %>
+      </a>
+      <a onclick="Share.twitter('URL','TITLE')">
+        <%= image_tag("twitter_icon.jpg", :width => 32, :height => 32, :crop => :fill) %>
+      </a>
+    </div>
+
+  </div>
+</nav>
 </html>
