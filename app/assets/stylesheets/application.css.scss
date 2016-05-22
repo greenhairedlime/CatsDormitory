@@ -9,3 +9,16 @@ span a{
 body {
   background: url('background.jpg');
 }
+div.navbar-right{
+  margin-top: 20px;
+}
+ul.navbar-right{
+  margin-top: 5px;
+  font-size: larger;
+}
+a.navbar-brand {
+  margin-bottom: 0px;
+}
+a.navbar-brand img {
+  margin-top: -5px;
+}

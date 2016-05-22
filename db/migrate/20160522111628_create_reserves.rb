@@ -1,10 +1,10 @@
-class CreateUsers < ActiveRecord::Migration
+class CreateReserves < ActiveRecord::Migration
   def change
-    create_table :users do |t|
+    create_table :reserves do |t|
       t.string :owner_last_name
       t.string :owner_first_name
       t.string :pet_name
-      t.text :text
+      t.text :notes
 
       t.timestamps null: false
     end

@@ -1,0 +1,23 @@
+<h1>Reserve a Room</h1>
+<%= link_to 'Make a reserve', new_reserf_path%>
+<table>
+  <tr>
+    <th>Owner Last Name</th>
+    <th>Owner First Name</th>
+    <th>Pet Name</th>
+    <th colspan="4"></th>
+  </tr>
+
+  <% @reserves.each do |reserve| %>
+      <tr>
+        <td><%= reserve.owner_last_name %></td>
+        <td><%= reserve.owner_first_name  %></td>
+        <td><%= reserve.pet_name  %></td>
+        <td><%= link_to 'Show', reserf_path(reserve) %></td>
+        <td><%= link_to 'Edit', edit_reserf_path(reserve) %></td>
+        <td><%= link_to 'Destroy', reserf_path(reserve),
+                        method: :delete,
+                        data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+  <% end %>
+</table>
