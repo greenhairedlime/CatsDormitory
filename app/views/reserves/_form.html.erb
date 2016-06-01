@@ -14,6 +14,13 @@
         </div>
     <% end %>
 
+    
+
+    <p>
+      <%= f.label :room_type%><br>
+      <%= f.select :room_type, ['Standard', 'Standard+']%>
+    </p>
+
     <p>
       <%= f.label :owner_last_name %><br>
       <%= f.text_field :owner_last_name %>
@@ -22,6 +29,11 @@
     <p>
       <%= f.label :owner_first_name %><br>
       <%= f.text_field :owner_first_name %>
+    </p>
+
+    <p>
+      <%= f.label :patronymic %><br>
+      <%= f.text_field :patronymic %>
     </p>
 
     <p>

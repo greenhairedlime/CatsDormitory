@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
-  <component name="DataSourceManagerImpl" format="xml" hash="3087581179">
+  <component name="DataSourceManagerImpl" format="xml" hash="3698045106">
     <data-source source="LOCAL" name="Rails CatsDormitory: development" uuid="8196062b-92ae-4ca2-a23a-f3480adabac8">
       <driver-ref>sqlite.xerial</driver-ref>
       <synchronize>true</synchronize>
@@ -20,7 +20,7 @@
         </library>
       </libraries>
     </data-source>
-    <data-source source="LOCAL" name="Sqlite (Xerial) - development.sqlite3" uuid="ebff8641-59c4-4873-acb5-250e1008a2cf">
+    <data-source source="LOCAL" name="Sqlite (Xerial) - development.sqlite3" uuid="2af3330d-bc01-4463-a339-d5ce12ebaebe">
       <driver-ref>sqlite.xerial</driver-ref>
       <synchronize>true</synchronize>
       <jdbc-driver>org.sqlite.JDBC</jdbc-driver>

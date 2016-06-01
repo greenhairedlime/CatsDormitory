@@ -44,6 +44,6 @@ class ReservesController < ApplicationController
 
   private
   def reserve_params
-    params.require(:reserve).permit(:owner_first_name, :owner_last_name, :pet_name, :notes)
+    params.require(:reserve).permit(:room_type, :owner_first_name, :owner_last_name, :patronymic, :pet_name, :notes)
   end
 end

@@ -31,8 +31,10 @@ ActiveRecord::Schema.define(version: 20160522111628) do
   add_index "comments", ["article_id"], name: "index_comments_on_article_id"
 
   create_table "reserves", force: :cascade do |t|
+    t.string   "room_type"
     t.string   "owner_last_name"
     t.string   "owner_first_name"
+    t.string   "patronymic"
     t.string   "pet_name"
     t.text     "notes"
     t.datetime "created_at",       null: false
