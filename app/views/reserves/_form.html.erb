@@ -13,12 +13,24 @@
           </ul>
         </div>
     <% end %>
-
-    
-
+    <p>
+      <%= f.label :start_date%><br>
+      <%= date_select :start_date, :startdate , :class => 'datepicker' %>
+    </p>
+    <p>
+      <%= f.label :end_date%><br>
+      <%= date_select :end_date, :enddate , :class => 'datepicker' %>
+    </p>
+    <!--<%= f.text_field :start_date %>-->
+    <!--<%= f.text_field :end_date %>-->
     <p>
       <%= f.label :room_type%><br>
       <%= f.select :room_type, ['Standard', 'Standard+']%>
+    </p>
+
+    <p>
+      <%= f.label :cell%><br>
+      <%= f.select :cell, ['1', '2', '3', '4', '5', '6', '7', '8', '9', '10']%>
     </p>
 
     <p>

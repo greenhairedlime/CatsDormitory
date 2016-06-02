@@ -32,10 +32,13 @@ ActiveRecord::Schema.define(version: 20160522111628) do
 
   create_table "reserves", force: :cascade do |t|
     t.string   "room_type"
+    t.string   "cell"
     t.string   "owner_last_name"
     t.string   "owner_first_name"
     t.string   "patronymic"
     t.string   "pet_name"
+    t.string      "start_date"
+    t.string     "end_date"
     t.text     "notes"
     t.datetime "created_at",       null: false
     t.datetime "updated_at",       null: false

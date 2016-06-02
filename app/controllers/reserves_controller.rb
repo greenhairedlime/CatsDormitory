@@ -1,4 +1,5 @@
 class ReservesController < ApplicationController
+  http_basic_authenticate_with name: "dhh", password: "secret", :only => :update
   def index
     @reserves = Reserve.all
   end
@@ -44,6 +45,6 @@ class ReservesController < ApplicationController
 
   private
   def reserve_params
-    params.require(:reserve).permit(:room_type, :owner_first_name, :owner_last_name, :patronymic, :pet_name, :notes)
+    params.require(:reserve).permit(:start_date, :end_date, :cell, :room_type, :owner_first_name, :owner_last_name, :patronymic, :pet_name, :notes)
   end
 end

@@ -1,24 +1,35 @@
 <h1>Reserve a Room</h1>
 <%= link_to 'Make a reserve', new_reserf_path%>
-<table>
+<div class="panel panel-default">
+  <div class="panel-heading">Current Reserves</div>
+<table class="table">
   <tr>
+    <th>Start Date</th>
+    <th>End Date</th>
+    <th>Room Type</th>
+    <th>Cell</th>
     <th>Owner Last Name</th>
     <th>Owner First Name</th>
+    <th>Patronymic</th>
     <th>Pet Name</th>
     <th colspan="4"></th>
   </tr>
 
   <% @reserves.each do |reserve| %>
       <tr>
+        <td><%= reserve.start_date.gsub('00:00:00.000000','')  %></td>
+        <td><%= reserve.end_date.gsub('00:00:00.000000','')  %></td>
+        <td><%= reserve.room_type  %></td>
+        <td><%= reserve.cell %></td>
         <td><%= reserve.owner_last_name %></td>
         <td><%= reserve.owner_first_name  %></td>
         <td><%= reserve.patronymic  %></td>
         <td><%= reserve.pet_name  %></td>
-        <td><%= link_to 'Show', reserf_path(reserve) %></td>
         <td><%= link_to 'Edit', edit_reserf_path(reserve) %></td>
-        <td><%= link_to 'Destroy', reserf_path(reserve),
+        <td><%= link_to 'Delete', reserf_path(reserve),
                         method: :delete,
                         data: { confirm: 'Are you sure?' } %></td>
       </tr>
   <% end %>
 </table>
+</div>

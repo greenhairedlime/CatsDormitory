@@ -30,15 +30,16 @@
     </table>
     <table name="reserves" schema="" catalog="" type="TABLE">
       <column name="id" sqlType="INTEGER" precision="0" scale="-1" nullable="false" jdbcType="4"/>
-      <column name="owner_id" sqlType="INTEGER" precision="0" scale="-1" nullable="true" jdbcType="4"/>
-      <column name="pet_id" sqlType="INTEGER" precision="0" scale="-1" nullable="true" jdbcType="4"/>
-      <column name="start_date" sqlType="DATE" precision="0" scale="-1" nullable="true" jdbcType="12"/>
-      <column name="end_date" sqlType="DATE" precision="0" scale="-1" nullable="true" jdbcType="12"/>
-      <column name="room_type" sqlType="TEXT" precision="0" scale="-1" nullable="true" jdbcType="12"/>
+      <column name="owner_first_name" sqlType="TEXT" precision="0" scale="-1" nullable="true" jdbcType="12"/>
+      <column name="owner_last_name" sqlType="TEXT" precision="0" scale="-1" nullable="true" jdbcType="12"/>
+      <column name="patronymic" sqlType="TEXT" precision="0" scale="-1" nullable="true" jdbcType="12"/>
+      <column name="pet_name" sqlType="TEXT" precision="0" scale="-1" nullable="true" jdbcType="12"/>
       <column name="notes" sqlType="TEXT" precision="0" scale="-1" nullable="true" jdbcType="12"/>
+      <column name="room_type" sqlType="TEXT" precision="0" scale="-1" nullable="true" jdbcType="12"/>
+      <column name="cell" sqlType="TEXT" precision="0" scale="-1" nullable="true" jdbcType="12"/>
+      <column name="start_date" sqlType="DATETIME" precision="0" scale="-1" nullable="true" jdbcType="12"/>
+      <column name="end_date" sqlType="DATETIME" precision="0" scale="-1" nullable="true" jdbcType="12"/>
       <primary-key columns="id"/>
-      <foreign-key name="#FAKE_reserves_1" columns="pet_id" ref-table="pets" ref-schema="" ref-catalog="" ref-columns="pet_id" update-rule="0" delete-rule="3" deferrability="1"/>
-      <foreign-key name="#FAKE_reserves_2" columns="owner_id" ref-table="pets" ref-schema="" ref-catalog="" ref-columns="owner_id" update-rule="0" delete-rule="3" deferrability="1"/>
     </table>
     <table name="schema_migrations" schema="" catalog="" type="TABLE">
       <column name="version" sqlType="VARCHAR" precision="0" scale="-1" nullable="false" jdbcType="12"/>
@@ -85,6 +86,59 @@
       <column name="pet_name" sqlType="TEXT" precision="0" scale="-1" nullable="true" jdbcType="12"/>
       <column name="notes" sqlType="TEXT" precision="0" scale="-1" nullable="true" jdbcType="12"/>
       <column name="room_type" sqlType="TEXT" precision="0" scale="-1" nullable="true" jdbcType="12"/>
+      <column name="cell" sqlType="TEXT" precision="0" scale="-1" nullable="true" jdbcType="12"/>
+      <column name="start_date" sqlType="TEXT" precision="0" scale="-1" nullable="true" jdbcType="12"/>
+      <column name="end_date" sqlType="TEXT" precision="0" scale="-1" nullable="true" jdbcType="12"/>
+      <primary-key columns="id"/>
+    </table>
+    <table name="schema_migrations" schema="" catalog="" type="TABLE">
+      <column name="version" sqlType="VARCHAR" precision="0" scale="-1" nullable="false" jdbcType="12"/>
+      <index name="unique_schema_migrations" unique="true" columns="version"/>
+    </table>
+    <table name="sqlite_sequence" schema="" catalog="" type="TABLE">
+      <column name="name" sqlType="" precision="0" scale="-1" nullable="true" jdbcType="12"/>
+      <column name="seq" sqlType="" precision="0" scale="-1" nullable="true" jdbcType="12"/>
+    </table>
+  </data-source>
+  <data-source name="Sqlite (Xerial) - development.sqlite3 [2]" uuid="5109f872-1e67-4d88-9a72-6219824403e0">
+    <database-info product="SQLite" version="3.8.9" jdbc-version="2.1" driver-name="SQLiteJDBC" driver-version="native"/>
+    <case-sensitivity plain-identifiers="mixed" quoted-identifiers="mixed"/>
+    <schema name="" catalog=""/>
+    <table name="articles" schema="" catalog="" type="TABLE">
+      <column name="id" sqlType="INTEGER" precision="0" scale="-1" nullable="false" jdbcType="4"/>
+      <column name="title" sqlType="VARCHAR" precision="0" scale="-1" nullable="true" jdbcType="12"/>
+      <column name="text" sqlType="TEXT" precision="0" scale="-1" nullable="true" jdbcType="12"/>
+      <column name="created_at" sqlType="DATETIME" precision="0" scale="-1" nullable="false" jdbcType="12"/>
+      <column name="updated_at" sqlType="DATETIME" precision="0" scale="-1" nullable="false" jdbcType="12"/>
+      <primary-key columns="id"/>
+    </table>
+    <table name="breeds" schema="" catalog="" type="TABLE">
+      <column name="breed_id" sqlType="INTEGER" precision="0" scale="-1" nullable="false" jdbcType="4"/>
+      <column name="breed" sqlType="TEXT" precision="0" scale="-1" nullable="true" jdbcType="12"/>
+      <primary-key columns="breed_id"/>
+      <index name="breeds_breed_id_uindex" unique="true" columns="breed_id"/>
+    </table>
+    <table name="comments" schema="" catalog="" type="TABLE">
+      <column name="id" sqlType="INTEGER" precision="0" scale="-1" nullable="false" jdbcType="4"/>
+      <column name="commenter" sqlType="VARCHAR" precision="0" scale="-1" nullable="true" jdbcType="12"/>
+      <column name="body" sqlType="TEXT" precision="0" scale="-1" nullable="true" jdbcType="12"/>
+      <column name="article_id" sqlType="INTEGER" precision="0" scale="-1" nullable="true" jdbcType="4"/>
+      <column name="created_at" sqlType="DATETIME" precision="0" scale="-1" nullable="false" jdbcType="12"/>
+      <column name="updated_at" sqlType="DATETIME" precision="0" scale="-1" nullable="false" jdbcType="12"/>
+      <primary-key columns="id"/>
+      <index name="index_comments_on_article_id" unique="true" columns="article_id"/>
+    </table>
+    <table name="reserves" schema="" catalog="" type="TABLE">
+      <column name="id" sqlType="INTEGER" precision="0" scale="-1" nullable="false" jdbcType="4"/>
+      <column name="owner_first_name" sqlType="TEXT" precision="0" scale="-1" nullable="true" jdbcType="12"/>
+      <column name="owner_last_name" sqlType="TEXT" precision="0" scale="-1" nullable="true" jdbcType="12"/>
+      <column name="patronymic" sqlType="TEXT" precision="0" scale="-1" nullable="true" jdbcType="12"/>
+      <column name="pet_name" sqlType="TEXT" precision="0" scale="-1" nullable="true" jdbcType="12"/>
+      <column name="notes" sqlType="TEXT" precision="0" scale="-1" nullable="true" jdbcType="12"/>
+      <column name="room_type" sqlType="TEXT" precision="0" scale="-1" nullable="true" jdbcType="12"/>
+      <column name="cell" sqlType="TEXT" precision="0" scale="-1" nullable="true" jdbcType="12"/>
+      <column name="start_date" sqlType="DATE" precision="0" scale="-1" nullable="true" jdbcType="12"/>
+      <column name="end_date" sqlType="DATE" precision="0" scale="-1" nullable="true" jdbcType="12"/>
       <primary-key columns="id"/>
     </table>
     <table name="schema_migrations" schema="" catalog="" type="TABLE">
