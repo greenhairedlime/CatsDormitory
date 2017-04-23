@@ -21,8 +21,8 @@
       <%= f.label :end_date%><br>
       <%= date_select :end_date, :enddate , :class => 'datepicker' %>
     </p>
-    <!--<%= f.text_field :start_date %>-->
-    <!--<%= f.text_field :end_date %>-->
+    <%= f.text_field :start_date %>
+    <%= f.text_field :end_date %>
     <p>
       <%= f.label :room_type%><br>
       <%= f.select :room_type, ['Standard', 'Standard+']%>

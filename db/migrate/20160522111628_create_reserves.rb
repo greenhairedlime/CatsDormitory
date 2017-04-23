@@ -6,9 +6,9 @@ class CreateReserves < ActiveRecord::Migration
       t.string :owner_last_name
       t.string :owner_first_name
       t.string :patronymic
-      t.string :pet_naame
-      t.string   :start_date
-      t.string   :end_date
+      t.string :pet_name
+      t.string :start_date
+      t.string :end_date
       t.text :notes
 
       t.timestamps null: false

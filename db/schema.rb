@@ -37,8 +37,8 @@ ActiveRecord::Schema.define(version: 20160522111628) do
     t.string   "owner_first_name"
     t.string   "patronymic"
     t.string   "pet_name"
-    t.string      "start_date"
-    t.string     "end_date"
+    t.string   "start_date"
+    t.string   "end_date"
     t.text     "notes"
     t.datetime "created_at",       null: false
     t.datetime "updated_at",       null: false

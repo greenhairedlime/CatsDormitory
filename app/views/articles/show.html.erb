@@ -1,8 +1,11 @@
 <h1><%= @article.title %></h1>
 <div class="panel panel-default">
+
+  <%= button_to 'Edit', edit_article_path(@article), :style => "float: right; margin: 10px", :method => :get %>
+  <br/>
   <!-- Default panel contents -->
   <div class="panel-body">
-    <p><%= @article.text %></p>
+    <p style="text-align: justify"><%= @article.text %></p>
   </div>
 </div>
 <div class="panel-heading"><h2>Comments</h2></div>
@@ -10,9 +13,6 @@
 
 <h2>Add a comment:</h2>
 <%= render 'comments/form' %>
-<nav>
-  <ul class="pager">
-    <li class="previous disabled"><%= link_to 'Back', articles_path %></li>
-    <li class="next"><%= link_to 'Edit', edit_article_path(@article) %></li>
-  </ul>
-</nav>
+
+<br/>
+<%= button_to 'Back', articles_path, :method => :get %>

@@ -1,5 +1,6 @@
 <h1>Reserve a Room</h1>
-<%= link_to 'Make a reserve', new_reserf_path%>
+<%= button_to 'Make a reserve', new_reserf_path, :method => :get%>
+<br/>
 <div class="panel panel-default">
   <div class="panel-heading">Current Reserves</div>
 <table class="table">
@@ -25,8 +26,9 @@
         <td><%= reserve.owner_first_name  %></td>
         <td><%= reserve.patronymic  %></td>
         <td><%= reserve.pet_name  %></td>
-        <td><%= link_to 'Edit', edit_reserf_path(reserve) %></td>
-        <td><%= link_to 'Delete', reserf_path(reserve),
+        <td><%= button_to 'Edit', edit_reserf_path(reserve),
+                        :method => :get %></td>
+        <td><%= button_to 'Delete', reserf_path(reserve),
                         method: :delete,
                         data: { confirm: 'Are you sure?' } %></td>
       </tr>
